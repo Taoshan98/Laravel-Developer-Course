@@ -88,20 +88,19 @@ class AlbumsController extends Controller
         $sql = "UPDATE albums set album_name = :album_name, description = :description WHERE id = :id";
         $resultQuery = DB::update($sql, [":id" => $album->getAttribute('id'), ":description" => $data['description'], ":album_name" => $data['album_name']]);*/
 
-        /*$result = Album::where('id', $album)->update(
+        $result = Album::where('id', $album)->update(
             [
                 'album_name' => request()->get('album_name'),
                 'description' => request()->get('description'),
             ]
-        );*/
+        );
 
-        $albumO = Album::find($album);
-
+        /*$albumO = Album::find($album);
         $albumO->album_name = request()->get('album_name');
         $albumO->description = request()->get('description');
         $albumO->user_id = 1;
         $albumO->album_thumb = '/';
-        $result = $albumO->save();
+        $result = $albumO->save();*/
 
         $msg = ($result === 1 ? "Album Aggiornato" : "Album non Aggiornato");
         session()->flash('message', $msg);
