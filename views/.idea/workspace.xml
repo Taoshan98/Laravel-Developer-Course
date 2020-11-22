@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1210ad1-130c-44ac-8e60-2751fbaf6215" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/View/Components/Alert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/blog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/alert.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/card.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/staff.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/template/layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/views.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/views.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../database/app/Http/Controllers/AlbumsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../database/resources/views/albums/albums.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../database/resources/views/albums/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../database/resources/views/albums/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../database/resources/views/components/alert.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../database/resources/views/template/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../database/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/database/factories/AlbumFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/../database/database/factories/AlbumFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/../database/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../database/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../routes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +176,9 @@
       <updated>1605224219511</updated>
       <workItem from="1605224220754" duration="242000" />
       <workItem from="1605443138302" duration="13691000" />
+      <workItem from="1605975802280" duration="19000" />
+      <workItem from="1605975919533" duration="51000" />
+      <workItem from="1606055357043" duration="743000" />
     </task>
     <servers />
   </component>

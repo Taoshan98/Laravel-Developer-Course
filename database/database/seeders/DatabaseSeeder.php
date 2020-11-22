@@ -22,13 +22,12 @@ class DatabaseSeeder extends Seeder
         Album::truncate();
         Photo::truncate();
 
-        User::factory(20)->has(
-            Album::factory(10)->has(
-                Photo::factory(20)
+        User::factory(5)->has(
+            Album::factory(2)->has(
+                Photo::factory(3)
             )
         )->create();
 
-        /*$this->call(AlbumSeeder::class);
-        $this->call(PhotoSeeder::class);*/
+        User::factory(10)->create();
     }
 }

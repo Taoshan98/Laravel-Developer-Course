@@ -2,35 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7689f0db-35bc-4acd-b049-41c1824c1f17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_15_11_20__19_04.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Album.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Photo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/AlbumFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/PhotoFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_15_183231_create_album_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_15_183328_create_photos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_15_185639_albums_update_column_name.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/AlbumSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/PhotoSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_15_11_20__17_59.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/database.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/albums/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/albums/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/alert.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/template/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/AlbumFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AlbumFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../routes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../views/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../views/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -160,11 +150,22 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/albums" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Taoshan\Develop\Github\Laravel Developer Course\Laravel-Developer-Course\database\resources\views\albums" />
+      <recent name="D:\Taoshan\Develop\Github\Laravel Developer Course\Laravel-Developer-Course\database\resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Taoshan\Develop\Github\Laravel Developer Course\Laravel-Developer-Course\database\resources\views\albums" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -180,7 +181,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605463487402</updated>
-      <workItem from="1605463488936" duration="9460000" />
+      <workItem from="1605463488936" duration="9510000" />
+      <workItem from="1605970829146" duration="11507000" />
+      <workItem from="1606045602923" duration="3260000" />
+      <workItem from="1606048901740" duration="10280000" />
     </task>
     <servers />
   </component>
@@ -191,13 +195,49 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1080" y="386" key="#SQL_Dialects" timestamp="1606057385129">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state x="-1080" y="386" key="#SQL_Dialects/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606057385129" />
+    <state x="-948" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606057436621">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state x="-948" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606057436621" />
     <state x="-810" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605472205106">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
     <state x="-810" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1605472205106" />
+    <state width="705" height="564" key="GridCell.Tab.0.bottom" timestamp="1606060739992">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state width="705" height="564" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
+    <state width="705" height="564" key="GridCell.Tab.0.center" timestamp="1606060739992">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state width="705" height="564" key="GridCell.Tab.0.center/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
+    <state width="705" height="564" key="GridCell.Tab.0.left" timestamp="1606060739992">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state width="705" height="564" key="GridCell.Tab.0.left/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
+    <state width="705" height="564" key="GridCell.Tab.0.right" timestamp="1606060739992">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state width="705" height="564" key="GridCell.Tab.0.right/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
     <state x="-932" y="268" key="NewPhpClassDialog" timestamp="1605473365868">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
     <state x="-932" y="268" key="NewPhpClassDialog/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1605473365868" />
+    <state x="-1039" y="190" key="SettingsEditor" timestamp="1606048971817">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state x="-1039" y="190" key="SettingsEditor/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606048971817" />
+    <state x="-892" y="159" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606060584925">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state x="-892" y="159" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060584925" />
+    <state x="-877" y="30" width="672" height="678" key="search.everywhere.popup" timestamp="1605981264335">
+      <screen x="-1080" y="-415" width="1080" height="1920" />
+    </state>
+    <state x="-877" y="30" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1605981264335" />
   </component>
 </project>

@@ -1,8 +1,5 @@
 <?php
 
-use App\Models\{Album, Photo, User};
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +11,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Models\{Photo, User};
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\{
+  AlbumsController
+};
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,9 +28,16 @@ Route::get('/users', function () {
     return print_r(User::with('albums')->paginate(5));
 });
 
-Route::get('/albums', function () {
-    echo "<pre>";
-    return print_r(Album::with('photo')->paginate(5));
+Route::resource('/albums', AlbumsController::class);
+
+Route::get('/usersnoalbums', function () {
+   $usersNoAlbum = DB::table('users as u')
+       ->select("u.id", "email", "name")
+       ->leftJoin('albums as a', 'u.id', 'a.user_id')
+       ->whereNull('album_name')
+       ->get();
+
+   return $usersNoAlbum;
 });
 
 Route::get('/photo', function () {

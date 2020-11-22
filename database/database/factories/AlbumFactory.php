@@ -23,7 +23,7 @@ class AlbumFactory extends Factory
     public function definition()
     {
         return [
-            'album_name' => $this->faker->text(100),
+            'album_name' => $this->faker->text(15),
             'album_thumb' => $this->faker->imageUrl(),
             'description' => $this->faker->text(120),
             'created_at' => $this->faker->dateTime(),
