@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
 class AlbumsController extends Controller
@@ -11,36 +11,9 @@ class AlbumsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        //return Album::all();
-
-        /* $sql = 'SELECT * FROM `albums` where 1=1';
-
-         $where = [];
-         if ($request->has('id')) {
-             $where['id'] = $request->get('id');
-             $sql .= " AND id=:id";
-         }
-
-         if ($request->has('album_name')) {
-             $where['album_name'] = $request->get('album_name');
-             $sql .= " AND album_name=:album_name";
-         }*/
-
-        $albums = DB::table('albums')->orderBy('id', 'ASC');
-
-        if ($request->has('id')) {
-            // se stiamo confrontandu una colonna e quindi utiliziamo '='
-            // possiamo anche ometterlo e passare solo la colonna e il valore
-            $albums->where('id', '=', $request->input('id'));
-        }
-
-        if ($request->has('album_name')) {
-            $albums->where('album_name', 'like', "%" . $request->input('album_name') . "%");
-        }
-
-        return view('albums.albums', ['albums' => $albums->get()]);
+        return view('albums.albums', ['albums' => Album::all()]);
     }
 
     /**
@@ -59,15 +32,23 @@ class AlbumsController extends Controller
         /*$sql = "INSERT INTO `albums` (`album_name`, `description`, user_id) VALUES (:album_name, :description, :id)";
         $resultQuery = DB::insert($sql, [':id' => 1, ":album_name" => $request->get('album_name'), ":description" => $request->get('description')]);*/
 
-        $resultQuery = DB::table('albums')->insert(
+        /*$album = new Album();
+        $album->album_name = request()->get('album_name');
+        $album->description = request()->get('description');
+        $album->user_id = 1;
+        $album->album_thumb = '/';
+        $result = $album->save();*/
+
+        $result = Album::create(
             [
                 'album_name' => request()->get('album_name'),
                 'description' => request()->get('description'),
                 'user_id' => 1,
+                'album_thumb' => '/',
             ]
         );
 
-        $msg = ($resultQuery ? "Album Aggiunto" : "Album non Aggiunto");
+        $msg = ($result ? "Album Aggiunto" : "Album non Aggiunto");
         session()->flash('message', $msg);
 
         return redirect()->route('albums.index');
@@ -76,10 +57,10 @@ class AlbumsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Album $album
      * @return \Illuminate\Http\Response
      */
-    public function show(Album $album)
+    public function show(Album $album): \Illuminate\Http\Response
     {
         return $album->getAttribute('album_name');
     }
@@ -87,7 +68,7 @@ class AlbumsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param Album $album
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Album $album)
@@ -101,20 +82,28 @@ class AlbumsController extends Controller
      * @param $album
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($album)
+    public function update($album): \Illuminate\Http\RedirectResponse
     {
         /*$data = request()->only(['album_name', 'description']);
         $sql = "UPDATE albums set album_name = :album_name, description = :description WHERE id = :id";
         $resultQuery = DB::update($sql, [":id" => $album->getAttribute('id'), ":description" => $data['description'], ":album_name" => $data['album_name']]);*/
 
-        $resultQuery = DB::table('albums')->where('id', $album)->update(
+        /*$result = Album::where('id', $album)->update(
             [
                 'album_name' => request()->get('album_name'),
                 'description' => request()->get('description'),
             ]
-        );
+        );*/
 
-        $msg = ($resultQuery === 1 ? "Album Aggiornato" : "Album non Aggiornato");
+        $albumO = Album::find($album);
+
+        $albumO->album_name = request()->get('album_name');
+        $albumO->description = request()->get('description');
+        $albumO->user_id = 1;
+        $albumO->album_thumb = '/';
+        $result = $albumO->save();
+
+        $msg = ($result === 1 ? "Album Aggiornato" : "Album non Aggiornato");
         session()->flash('message', $msg);
 
         return redirect()->route('albums.index');
@@ -126,11 +115,15 @@ class AlbumsController extends Controller
      * @param $album
      * @return int
      */
-    public function destroy($album)
+    public function destroy($album): int
     {
         /*$sql = "DELETE FROM albums WHERE id=:id";
         return DB::delete($sql, [":id" => $album->getAttribute('id')]);
         return $album->delete();*/
-        return DB::table('albums')->where('id', $album)->delete();
+
+        //return DB::table('albums')->where('id', $album)->delete();
+
+        /** Meglio così */
+        return  Album::destroy($album);
     }
 }

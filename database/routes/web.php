@@ -24,8 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-    echo "<pre>";
-    return print_r(User::with('albums')->paginate(5));
+    return User::with('albums')->paginate(5);
 });
 
 Route::resource('/albums', AlbumsController::class);
@@ -41,6 +40,5 @@ Route::get('/usersnoalbums', function () {
 });
 
 Route::get('/photo', function () {
-    echo "<pre>";
-    return print_r(Photo::get());
+    return Photo::get();
 });

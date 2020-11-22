@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7689f0db-35bc-4acd-b049-41c1824c1f17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/albums/albums.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/albums/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/albums/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/alert.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/template/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/AlbumFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AlbumFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlbumsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Album.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Album.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../routes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../views/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../views/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +176,7 @@
       <workItem from="1605463488936" duration="9510000" />
       <workItem from="1605970829146" duration="11507000" />
       <workItem from="1606045602923" duration="3260000" />
-      <workItem from="1606048901740" duration="10280000" />
+      <workItem from="1606048901740" duration="12623000" />
     </task>
     <servers />
   </component>
@@ -207,22 +199,22 @@
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
     <state x="-810" y="300" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1605472205106" />
-    <state width="705" height="564" key="GridCell.Tab.0.bottom" timestamp="1606060739992">
+    <state width="705" height="564" key="GridCell.Tab.0.bottom" timestamp="1606062499206">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
-    <state width="705" height="564" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
-    <state width="705" height="564" key="GridCell.Tab.0.center" timestamp="1606060739992">
+    <state width="705" height="564" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606062499206" />
+    <state width="705" height="564" key="GridCell.Tab.0.center" timestamp="1606062499206">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
-    <state width="705" height="564" key="GridCell.Tab.0.center/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
-    <state width="705" height="564" key="GridCell.Tab.0.left" timestamp="1606060739992">
+    <state width="705" height="564" key="GridCell.Tab.0.center/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606062499206" />
+    <state width="705" height="564" key="GridCell.Tab.0.left" timestamp="1606062499206">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
-    <state width="705" height="564" key="GridCell.Tab.0.left/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
-    <state width="705" height="564" key="GridCell.Tab.0.right" timestamp="1606060739992">
+    <state width="705" height="564" key="GridCell.Tab.0.left/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606062499206" />
+    <state width="705" height="564" key="GridCell.Tab.0.right" timestamp="1606062499206">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
-    <state width="705" height="564" key="GridCell.Tab.0.right/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060739992" />
+    <state width="705" height="564" key="GridCell.Tab.0.right/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606062499206" />
     <state x="-932" y="268" key="NewPhpClassDialog" timestamp="1605473365868">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
@@ -231,10 +223,10 @@
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
     <state x="-1039" y="190" key="SettingsEditor/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606048971817" />
-    <state x="-892" y="159" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606060584925">
+    <state x="-892" y="159" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606063191247">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
-    <state x="-892" y="159" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606060584925" />
+    <state x="-892" y="159" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1080/-1080.-415.1080.1920@-1080.-415.1080.1920" timestamp="1606063191247" />
     <state x="-877" y="30" width="672" height="678" key="search.everywhere.popup" timestamp="1605981264335">
       <screen x="-1080" y="-415" width="1080" height="1920" />
     </state>
