@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <h1>Edit Album</h1>
+    <h1>Create Album</h1>
 
-    <form action="{{route('albums.store')}}" method="POST">
+    <form action="{{route('albums.store')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
 
         <div class="form-group">

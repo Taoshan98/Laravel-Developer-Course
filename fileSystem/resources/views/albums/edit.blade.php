@@ -4,7 +4,7 @@
 
     <h1>Edit Album</h1>
 
-    <form action="/albums/{{$album->id}}" method="POST">
+    <form action="/albums/{{$album->id}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="hidden" name="_method" id="_method" value="PATCH">
 
@@ -19,6 +19,19 @@
             <textarea name="description" id="description" class="form-control"
                       placeholder="Album Description" aria-describedby="helpId">{{$album->description}}</textarea>
         </div>
+
+        <div class="form-group">
+            <input type="file" class="form-control-file" id="album_thumb" name="album_thumb">
+        </div>
+
+        @if($album->album_thumb)
+            <p>Preview</p>
+            <div class="form-group">
+                <img width="50%" height="50%" src="{{$album->album_thumb}}" title="{{$album->album_thumb}}"
+                     alt="{{$album->album_thumb}}">
+            </div>
+
+        @endif
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

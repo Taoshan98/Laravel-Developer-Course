@@ -20,8 +20,6 @@ class Album extends Model
      */
     //protected $table = "albums";
 
-    protected $fillable = ['album_name', "description", 'user_id', 'album_thumb'];
-
     public function photo(){
         return $this->hasMany( Photo::class);
     }
