@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\{
-  AlbumsController
+    AlbumsController
 };
 
 Route::get('/', function () {
@@ -30,15 +30,15 @@ Route::get('/users', function () {
 Route::resource('/albums', AlbumsController::class);
 
 Route::get('/usersnoalbums', function () {
-   $usersNoAlbum = DB::table('users as u')
-       ->select("u.id", "email", "name")
-       ->leftJoin('albums as a', 'u.id', 'a.user_id')
-       ->whereNull('album_name')
-       ->get();
+    $usersNoAlbum = DB::table('users as u')
+        ->select("u.id", "email", "name")
+        ->leftJoin('albums as a', 'u.id', 'a.user_id')
+        ->whereNull('album_name')
+        ->get();
 
-   return $usersNoAlbum;
+    return $usersNoAlbum;
 });
 
-Route::get('/photo', function () {
-    return Photo::get();
-});
+Route::get('/albums/{album}/photos', [AlbumsController::class, 'getPhotos'])
+    ->name("album.getPhotos")
+    ->where('album', '[0-9]+');

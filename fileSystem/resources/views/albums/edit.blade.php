@@ -20,18 +20,7 @@
                       placeholder="Album Description" aria-describedby="helpId">{{$album->description}}</textarea>
         </div>
 
-        <div class="form-group">
-            <input type="file" class="form-control-file" id="album_thumb" name="album_thumb">
-        </div>
-
-        @if($album->album_thumb)
-            <p>Preview</p>
-            <div class="form-group">
-                <img width="50%" height="50%" src="{{$album->album_thumb}}" title="{{$album->album_thumb}}"
-                     alt="{{$album->album_thumb}}">
-            </div>
-
-        @endif
+        @include("albums.partial.fileUpload")
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

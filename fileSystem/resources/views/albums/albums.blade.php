@@ -19,11 +19,15 @@
                     ({{$album->id}}) {{$album->album_name}}
 
                     @if($album->album_thumb)
-                        <img width="15%" height="15%" src="{{$album->album_thumb}}" title="{{$album->album_thumb}}"
-                             alt="{{$album->album_thumb}}">
+                        <img width="15%" height="15%" src="{{asset($album->path)}}" title="{{$album->album_name}}"
+                             alt="{{$album->album_name}}">
                     @endif
                     <div>
                         <a href="/albums/{{$album->id}}/edit" class="editAlbumBtn btn btn-sm btn-primary">Edit</a>
+
+                        @if($album->photos_count > 0)
+                            <a href="/albums/{{$album->id}}/photos" class="editAlbumBtn btn btn-sm btn-primary">({{$album->photos_count}}) View Photos</a>
+                        @endif
                         <button data-album="{{$album->id}}" class="deleteAlbumBtn btn btn-sm btn-danger">Delete</button>
                     </div>
                 </li>
@@ -54,13 +58,16 @@
                     method: 'DELETE',
                     data: {'_token': $("input[name='_token']").val()},
                     success: function (response) {
+
+                        console.log(response);
                         if (response === '1') {
                             currentBtn.closest('li').remove()
                         } else {
                             alert("Non è stato possibile cancellare L'album")
                         }
                     },
-                    error: function () {
+                    error: function (response) {
+                        console.log(response);
                         alert("Non è stato possibile cancellare L'album")
                     }
                 });

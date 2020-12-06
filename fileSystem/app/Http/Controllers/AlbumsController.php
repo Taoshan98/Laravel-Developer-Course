@@ -3,8 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\Photo;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AlbumsController extends Controller
 {
@@ -13,15 +20,21 @@ class AlbumsController extends Controller
      */
     public function index()
     {
-        return view('albums.albums', ['albums' => Album::all()]);
+        //così ritorna anche tutte le righe delle foto
+        //$albums = Album::orderBy('id', 'DESC')->with('photos')->get();
+        $albums = Album::orderBy('id', 'DESC')->withCount('photos')->get();
+        return view('albums.albums', ['albums' => $albums]);
     }
 
     /**
      * Show the form for creating a new resource.
-     **/
+     *
+     * @return Application|Factory|View
+     */
     public function create()
     {
-        return view('albums.create');
+        $album = new Album();
+        return view('albums.create', ['album' => $album]);
     }
 
     /**
@@ -30,14 +43,23 @@ class AlbumsController extends Controller
     public function store()
     {
 
-        $result = Album::create(
-            [
-                'album_name' => request()->get('album_name'),
-                'description' => request()->get('description'),
-                'user_id' => 1,
-                'album_thumb' => '/',
-            ]
-        );
+        $valuesToSave = [
+            'album_name' => request()->get('album_name'),
+            'description' => request()->get('description'),
+            'user_id' => 1,
+        ];
+
+        if (request()->hasFile("album_thumb")) {
+            $file = request()->file('album_thumb');
+
+            if ($file->isValid()) {
+                $fileName = $file->getClientOriginalName();
+                $file->storeAs("public/" . env('ALBUM_THUMB_DIR'), $fileName);
+                $valuesToSave['album_thumb'] = env('ALBUM_THUMB_DIR') . $fileName;
+            }
+        }
+
+        $result = Album::create($valuesToSave);
 
         $msg = ($result ? "Album Aggiunto" : "Album non Aggiunto");
         session()->flash('message', $msg);
@@ -49,9 +71,9 @@ class AlbumsController extends Controller
      * Display the specified resource.
      *
      * @param Album $album
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function show(Album $album): \Illuminate\Http\Response
+    public function show(Album $album): Response
     {
         return $album->getAttribute('album_name');
     }
@@ -60,7 +82,7 @@ class AlbumsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Album $album
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function edit(Album $album)
     {
@@ -71,9 +93,9 @@ class AlbumsController extends Controller
      * Update the specified resource in storage.
      *
      * @param $album
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function update($album): \Illuminate\Http\RedirectResponse
+    public function update($album): RedirectResponse
     {
         $valuesToSave = [
             'album_name' => request()->get('album_name'),
@@ -82,9 +104,12 @@ class AlbumsController extends Controller
 
         if (request()->hasFile("album_thumb")) {
             $file = request()->file('album_thumb');
-            $fileName = $album . '.' . $file->extension();
-            $file->storeAs(env('IMG_DIR'), $fileName);
-            $valuesToSave['album_thumb'] = $fileName;
+
+            if ($file->isValid()) {
+                $fileName = $file->getClientOriginalName();
+                $file->storeAs("public/" . env('ALBUM_THUMB_DIR'), $fileName);
+                $valuesToSave['album_thumb'] = env('ALBUM_THUMB_DIR') . $fileName;
+            }
         }
 
         $result = Album::where('id', $album)->update($valuesToSave);
@@ -101,8 +126,22 @@ class AlbumsController extends Controller
      * @param $album
      * @return int
      */
-    public function destroy($album): int
+    public function destroy(Album $album): int
     {
-        return Album::destroy($album);
+        $thumbnail = $album->album_thumb;
+
+        $res = $album->delete();
+
+        if ($res && !empty($thumbnail) && Storage::exists("public/" . $thumbnail)){
+            Storage::delete("public/" . $thumbnail);
+        }
+
+        return $res;
+    }
+
+    public function getPhotos(Album $album){
+
+       return $images = Photo::where('album_id', $album->id)->get();
+
     }
 }
